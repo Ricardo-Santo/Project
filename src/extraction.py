@@ -7,7 +7,7 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 SYMBOL = os.getenv("SYMBOL")
 
-def fetch_monthly_adjusted_data(symbol, api_key):
+def fetch_monthly_adjusted_data():
     """
     Coleta dados mensais ajustados de ações usando a API Alpha Vantage.
     A API Key é lida de uma variável de ambiente chamada 'API_KEY'.
@@ -19,7 +19,7 @@ def fetch_monthly_adjusted_data(symbol, api_key):
 
 
     
-    if not api_key:
+    if not API_KEY:
         raise ValueError("A API Key não está definida. Configure a variável de ambiente 'API_KEY'.")
 
     # Endpoint da API
@@ -28,8 +28,8 @@ def fetch_monthly_adjusted_data(symbol, api_key):
     # Parâmetros da solicitação
     params = {
         "function": "TIME_SERIES_MONTHLY_ADJUSTED",
-        "symbol": symbol,
-        "apikey": api_key,
+        "symbol": SYMBOL,
+        "apikey": API_KEY,
         "datatype": "json",  # JSON ou CSV
     }
     
@@ -71,7 +71,7 @@ def fetch_monthly_adjusted_data(symbol, api_key):
 if __name__ == "__main__":
     # Certifique-se de que a variável de ambiente 'API_KEY' está configurada antes de rodar o código
     try:
-        edp_data = fetch_monthly_adjusted_data(SYMBOL, API_KEY)
+        edp_data = fetch_monthly_adjusted_data()
         if edp_data is not None:
             print(edp_data.head())
     except Exception as e:
