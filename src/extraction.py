@@ -45,14 +45,12 @@ def fetch_daily_data():
         print("Erro: Não foram encontrados dados para o símbolo fornecido.")
         return None
 
-    # Processar os dados
-    time_series = data["Time Series (Daily)"]
-    df = pd.DataFrame.from_dict(time_series, orient="index")
-    df.index = pd.to_datetime(df.index)  # Converte o índice para datetime
-    df.columns = [
-        "open", "high", "low", "close", "volume"
-    ]
-    df = df.sort_index()  # Ordena por data
+    time_series = data.get('Time Series (Daily)', {})
+
+    df = pd.DataFrame.from_dict(time_series, orient='index').reset_index()
+    df.rename(columns={'index': 'date'}, inplace=True)
+
+#    df = df.sort_index()  # Ordena por data
     
     # Caminho para salvar o CSV
 #    output_path = r"data\\daily_adjusted_data.csv"
