@@ -58,7 +58,7 @@ def fetch_monthly_adjusted_data():
     df = df.sort_index()  # Ordena por data
     
     # Caminho para salvar o CSV
-    output_path = r"/Users/edit.admin/Documents/Project/data/monthly_adjusted_data.csv"
+    output_path = r"data\\monthly_adjusted_data.csv"
     try:
         df.to_csv(output_path)
         print(f"Dados mensais ajustados salvos em: {output_path}")
