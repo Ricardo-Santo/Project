@@ -17,13 +17,13 @@ projeto_etl_ibm/
 │
 ├── data/                    # Raw and processed CSVs
 │   └── processed/
-├── *(missing)* dbt_ibm/                 # dbt project folder
+├── *(missing)* dbt_ibm/     # dbt project folder
 ├── src/                     # Python scripts
 │   ├── data_extraction.py
 │   ├── data_transformation.py
-│   └── *(missing)* data_load.py
+│   └── data_load.py
 ├── requirements.txt         # Python dependencies
-├── *(missing)* Dockerfile               # Containerized ETL pipeline
+├── *(missing)* Dockerfile   # Containerized ETL pipeline
 └── README.md
 ```
 
@@ -45,7 +45,7 @@ projeto_etl_ibm/
 
 1. **Extract**: Collects daily stock prices and company overview for JVA using Alpha Vantage API.
 2. **Transform**: Creates star schema tables (`dim_empresa`, `dim_indicador`, `dim_tempo`, `fact_cotacoes`, `fact_indicadores`).
-3. **Load**: Inserts the transformed data into a PostgreSQL database.
+3. **Load**: Inserts the transformed data into a PostgreSQL database. Database is hosted in render.com for a month.
 4. **Model** (optional): dbt can be used to create additional models (e.g., average monthly price).
 5. **Visualize** (optional): Dashboards can be created in Power BI.
 
