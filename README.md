@@ -34,7 +34,7 @@ projeto_etl_ibm/
 - **Python 3.12**
 - **Pandas** for data manipulation
 - **SQLAlchemy** for database operations *(missing)*
-- **PostgreSQL** (hosted on [Render](https://render.com/)) *(missing)*
+- **PostgreSQL** hosted on [Render](https://render.com/)
 - **Docker** for containerization *((missing))*
 - **dbt** for transformations and models *(missing)*
 - **Power BI** for data visualization *(missing)*
@@ -45,7 +45,7 @@ projeto_etl_ibm/
 
 1. **Extract**: Collects daily stock prices and company overview for JVA using Alpha Vantage API.
 2. **Transform**: Creates star schema tables (`dim_empresa`, `dim_indicador`, `dim_tempo`, `fact_cotacoes`, `fact_indicadores`).
-3. **Load**: Inserts the transformed data into a PostgreSQL database. Database is hosted in render.com for a month.
+3. **Load**: Inserts the transformed data into a PostgreSQL database.
 4. **Model** (optional): dbt can be used to create additional models (e.g., average monthly price).
 5. **Visualize** (optional): Dashboards can be created in Power BI.
 
