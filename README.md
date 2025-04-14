@@ -17,13 +17,13 @@ projeto_etl_ibm/
 │
 ├── data/                    # Raw and processed CSVs
 │   └── processed/
-├── *(missing)* dbt_ibm/                 # dbt project folder
+├── *(missing)* dbt_ibm/     # dbt project folder
 ├── src/                     # Python scripts
 │   ├── data_extraction.py
 │   ├── data_transformation.py
-│   └── *(missing)* data_load.py
+│   └── data_load.py
 ├── requirements.txt         # Python dependencies
-├── *(missing)* Dockerfile               # Containerized ETL pipeline
+├── *(missing)* Dockerfile   # Containerized ETL pipeline
 └── README.md
 ```
 
@@ -34,7 +34,7 @@ projeto_etl_ibm/
 - **Python 3.12**
 - **Pandas** for data manipulation
 - **SQLAlchemy** for database operations *(missing)*
-- **PostgreSQL** (hosted on [Render](https://render.com/)) *(missing)*
+- **PostgreSQL** hosted on [Render](https://render.com/)
 - **Docker** for containerization *((missing))*
 - **dbt** for transformations and models *(missing)*
 - **Power BI** for data visualization *(missing)*

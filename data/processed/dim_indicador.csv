@@ -1,0 +1,6 @@
+indicador_id,nome_indicador,descricao
+1,EPS,Lucro por ação
+2,DividendPerShare,Dividendo por ação
+3,PERatio,Preço sobre Lucro
+4,ReturnOnEquityTTM,Retorno sobre patrimônio líquido
+5,MarketCapitalization,Valor de mercado
