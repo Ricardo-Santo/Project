@@ -14,7 +14,7 @@ DBNAME = os.getenv("DB_NAME")
 PORT = os.getenv("DB_PORT")
 
 DATABASE_URL = f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}"
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 
 # Caminhos dos arquivos processados
 csv_files = {
@@ -33,9 +33,9 @@ def create_tables(csv_files, engine):
         df = pd.read_csv(file_path)
 
         # Limpa a tabela antes de inserir (sem derrubar estrutura)
-        with engine.begin() as conn:
-            print(f" Limpando tabela `{table_name}`...")
-            conn.execute(text(f"DELETE FROM {table_name}"))
+        #with engine.begin() as conn:
+        #    print(f" Limpando tabela `{table_name}`...")
+        #    conn.execute(text(f"DELETE FROM {table_name}"))
 
         # Insere os dados
         df.to_sql(table_name, engine, if_exists='append', index=False)
