@@ -13,17 +13,17 @@ This project automates the ETL pipeline for JVA stock data and company financial
 ### Project Structure
 
 ```
-projeto_etl_ibm/
+Projeto_(etl_jva)/
 │
 ├── data/                    # Raw and processed CSVs
 │   └── processed/
-├── *(missing)* dbt_ibm/     # dbt project folder
+├── dbt_jva/     # dbt project folder
 ├── src/                     # Python scripts
-│   ├── data_extraction.py
-│   ├── data_transformation.py
-│   └── data_load.py
+│   ├── extraction.py
+│   ├── transformation.py
+│   └── load.py
 ├── requirements.txt         # Python dependencies
-├── *(missing)* Dockerfile   # Containerized ETL pipeline
+├── dockerfile   # Containerized ETL pipeline
 └── README.md
 ```
 
