@@ -55,8 +55,8 @@ Projeto_(etl_jva)/
 
 ```bash
 # Build the Docker image
-docker build -t etl_ibm .
+docker build -t etl_jva .
 
 # Run the ETL pipeline
-docker run --rm etl_ibm
+docker run --rm etl_jva
 ```
