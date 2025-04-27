@@ -15,15 +15,16 @@ This project automates the ETL pipeline for JVA stock data and company financial
 ```
 Projeto_(etl_jva)/
 │
-├── data/                    # Raw and processed CSVs
+├── data/                       # Raw and processed CSVs
 │   └── processed/
-├── dbt_jva/     # dbt project folder
-├── src/                     # Python scripts
+├── dbt_jva/                    # dbt project folder
+├── src/                        # Python scripts
+│   ├── dashboard_jva.py
 │   ├── extraction.py
 │   ├── transformation.py
 │   └── load.py
-├── requirements.txt         # Python dependencies
-├── dockerfile   # Containerized ETL pipeline
+├── requirements.txt            # Python dependencies
+├── dockerfile                  # Containerized ETL pipeline
 └── README.md
 ```
 
@@ -33,11 +34,11 @@ Projeto_(etl_jva)/
 
 - **Python 3.12**
 - **Pandas** for data manipulation
-- **SQLAlchemy** for database operations *(missing)*
+- **SQLAlchemy** for database operations 
 - **PostgreSQL** hosted on [Render](https://render.com/)
-- **Docker** for containerization *((missing))*
-- **dbt** for transformations and models *(missing)*
-- **Power BI** for data visualization *(missing)*
+- **Docker** for containerization 
+- **dbt** for transformations and models 
+- **Streamlit** for data visualization
 
 ---
 
@@ -51,7 +52,7 @@ Projeto_(etl_jva)/
 
 ---
 
-###  Run with Docker *(missing)*
+###  Run with Docker
 
 ```bash
 # Build the Docker image
@@ -59,4 +60,10 @@ docker build -t etl_jva .
 
 # Run the ETL pipeline
 docker run --rm etl_jva
+```
+###  Run the dashboard
+
+```bash
+# Run dashboard visualization
+streamlit run src/dashboard_jva.py
 ```
