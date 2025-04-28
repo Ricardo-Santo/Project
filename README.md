@@ -13,17 +13,18 @@ This project automates the ETL pipeline for JVA stock data and company financial
 ### Project Structure
 
 ```
-projeto_etl_ibm/
+Projeto_(etl_jva)/
 │
-├── data/                    # Raw and processed CSVs
+├── data/                       # Raw and processed CSVs
 │   └── processed/
-├── *(missing)* dbt_ibm/     # dbt project folder
-├── src/                     # Python scripts
-│   ├── data_extraction.py
-│   ├── data_transformation.py
-│   └── data_load.py
-├── requirements.txt         # Python dependencies
-├── *(missing)* Dockerfile   # Containerized ETL pipeline
+├── dbt_jva/                    # dbt project folder
+├── src/                        # Python scripts
+│   ├── dashboard_jva.py
+│   ├── extraction.py
+│   ├── transformation.py
+│   └── load.py
+├── requirements.txt            # Python dependencies
+├── dockerfile                  # Containerized ETL pipeline
 └── README.md
 ```
 
@@ -33,11 +34,11 @@ projeto_etl_ibm/
 
 - **Python 3.12**
 - **Pandas** for data manipulation
-- **SQLAlchemy** for database operations *(missing)*
+- **SQLAlchemy** for database operations 
 - **PostgreSQL** hosted on [Render](https://render.com/)
-- **Docker** for containerization *((missing))*
-- **dbt** for transformations and models *(missing)*
-- **Power BI** for data visualization *(missing)*
+- **Docker** for containerization 
+- **dbt** for transformations and models 
+- **Streamlit** for data visualization
 
 ---
 
@@ -51,12 +52,18 @@ projeto_etl_ibm/
 
 ---
 
-###  Run with Docker *(missing)*
+###  Run with Docker
 
 ```bash
 # Build the Docker image
-docker build -t etl_ibm .
+docker build -t etl_jva .
 
 # Run the ETL pipeline
-docker run --rm etl_ibm
+docker run --rm etl_jva
+```
+###  Run the dashboard
+
+```bash
+# Run dashboard visualization
+streamlit run src/dashboard_jva.py
 ```
